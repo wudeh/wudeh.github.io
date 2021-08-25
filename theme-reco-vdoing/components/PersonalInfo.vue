@@ -1,46 +1,46 @@
 <template>
-<div class="personal-info-wrapper">
-  <img v-if="$themeConfig.authorAvatar"
-    class="personal-img"
-    :src="$withBase($themeConfig.authorAvatar)"
-    alt="author-avatar"
-  >
-  <div class="author" v-if="$themeConfig.author || $site.title">
-    {{ $themeConfig.author || $site.title }}
+  <div class="personal-info-wrapper">
+    <img v-if="$themeConfig.authorAvatar" class="personal-img" :src="$withBase($themeConfig.authorAvatar)" alt="author-avatar" />
+    <div class="author" v-if="$themeConfig.author || $site.title">
+      {{ $themeConfig.author || $site.title }}
+    </div>
+    <div class="personal-info-details">
+      <div>
+        文章：<span>{{ pageNums }}</span>
+      </div>
+      <div>地点：<span>北京·XX</span></div>
+    </div>
+    <div class="slogan" v-if="$themeConfig.slogan">
+      {{ $themeConfig.slogan }}
+    </div>
+    <ul class="social-links" v-if="socialLinks && socialLinks.length">
+      <li class="social-item" v-for="(item, index) in socialLinks" :key="index">
+        <reco-icon :icon="item.icon" :link="item.link" :style="{ color: item.color }" />
+      </li>
+    </ul>
   </div>
-  <div class="personal-info-details">
-    <div>文章：<span>{{pageNums}}</span></div>
-    <div>地点：<span>北京·某某</span></div>
-  </div>
-  <div class="slogan" v-if="$themeConfig.slogan">
-    {{$themeConfig.slogan}}
-  </div>
-  <ul class="social-links" v-if="socialLinks && socialLinks.length">
-    <li class="social-item" v-for="(item, index) in socialLinks" :key="index">
-      <reco-icon :icon="item.icon" :link="item.link" :style="{ color: item.color }" />
-    </li>
-  </ul>
-</div>
 </template>
 
 <script>
-import { defineComponent, computed } from '@vue/composition-api'
-import { RecoIcon } from '@vuepress-reco/core/lib/components'
-import { getOneColor } from '@theme/helpers/other'
+import { defineComponent, computed } from "@vue/composition-api";
+import { RecoIcon } from "@vuepress-reco/core/lib/components";
+import { getOneColor } from "@theme/helpers/other";
 
 export default defineComponent({
   components: { RecoIcon },
-  setup (props, ctx) {
-    const { root: _this } = ctx
-    const homeBlogCfg = computed(() => _this.$recoLocales.homeBlog)
-    const socialLinks = computed(() => (_this.$themeConfig.blogConfig && _this.$themeConfig.blogConfig.socialLinks || []).map(item => {
-      if (!item.color) item.color = getOneColor()
-      return item
-    }))
-    const pageNums = computed(() => _this.$sortPosts.length)
-    return { homeBlogCfg, socialLinks, pageNums }
-  }
-})
+  setup(props, ctx) {
+    const { root: _this } = ctx;
+    const homeBlogCfg = computed(() => _this.$recoLocales.homeBlog);
+    const socialLinks = computed(() =>
+      ((_this.$themeConfig.blogConfig && _this.$themeConfig.blogConfig.socialLinks) || []).map((item) => {
+        if (!item.color) item.color = getOneColor();
+        return item;
+      })
+    );
+    const pageNums = computed(() => _this.$sortPosts.length);
+    return { homeBlogCfg, socialLinks, pageNums };
+  },
+});
 </script>
 
 <style lang="stylus" scoped>
@@ -61,7 +61,7 @@ export default defineComponent({
     font-size .8rem
     text-align center
     color var(--text-color-sub)
-  .personal-info-details 
+  .personal-info-details
     display flex
     justify-content center
     margin-top 5px
