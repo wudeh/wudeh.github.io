@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Typescript 基础知识总结 | wudeh的学习基地</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="wudeh的学习基地是wudeh的个人博客，用于记录学习笔记、分享音乐、书籍、旅行等个人兴趣的站点。">
+    <meta name="keywords" content="wudeh,wudeh的博客,博客,个人博客,vue,vuejs,vuepress,vuepress-theme-reco">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.f1c93842.css" as="style"><link rel="preload" href="/assets/js/app.c1963d6b.js" as="script"><link rel="preload" href="/assets/js/2.d5aa5fdd.js" as="script"><link rel="preload" href="/assets/js/64.4080e243.js" as="script"><link rel="preload" href="/assets/js/4.461c790c.js" as="script"><link rel="prefetch" href="/assets/js/10.84c09092.js"><link rel="prefetch" href="/assets/js/100.7406247e.js"><link rel="prefetch" href="/assets/js/101.cd834df8.js"><link rel="prefetch" href="/assets/js/102.a67c2e7d.js"><link rel="prefetch" href="/assets/js/103.1cac045c.js"><link rel="prefetch" href="/assets/js/104.1e12fd65.js"><link rel="prefetch" href="/assets/js/105.5eb765dc.js"><link rel="prefetch" href="/assets/js/106.a80d047c.js"><link rel="prefetch" href="/assets/js/107.cfcc9fe0.js"><link rel="prefetch" href="/assets/js/108.3ddf3315.js"><link rel="prefetch" href="/assets/js/109.c58532df.js"><link rel="prefetch" href="/assets/js/11.5ce3516e.js"><link rel="prefetch" href="/assets/js/110.6d171eab.js"><link rel="prefetch" href="/assets/js/111.8bd77e5f.js"><link rel="prefetch" href="/assets/js/112.a0a1b030.js"><link rel="prefetch" href="/assets/js/113.be7313f6.js"><link rel="prefetch" href="/assets/js/114.e026f952.js"><link rel="prefetch" href="/assets/js/115.197e6281.js"><link rel="prefetch" href="/assets/js/116.0436c14d.js"><link rel="prefetch" href="/assets/js/117.68edcec6.js"><link rel="prefetch" href="/assets/js/118.075955c7.js"><link rel="prefetch" href="/assets/js/119.104eccbd.js"><link rel="prefetch" href="/assets/js/12.9456c572.js"><link rel="prefetch" href="/assets/js/120.414f9ede.js"><link rel="prefetch" href="/assets/js/121.cc12f5b8.js"><link rel="prefetch" href="/assets/js/122.9699503b.js"><link rel="prefetch" href="/assets/js/123.aabbe5e4.js"><link rel="prefetch" href="/assets/js/124.7a3e378f.js"><link rel="prefetch" href="/assets/js/125.4c351298.js"><link rel="prefetch" href="/assets/js/126.12939dcc.js"><link rel="prefetch" href="/assets/js/127.a8d56757.js"><link rel="prefetch" href="/assets/js/128.f1d6d500.js"><link rel="prefetch" href="/assets/js/129.4a246286.js"><link rel="prefetch" href="/assets/js/13.f1d46a02.js"><link rel="prefetch" href="/assets/js/130.c4fe855c.js"><link rel="prefetch" href="/assets/js/131.dfdb21ce.js"><link rel="prefetch" href="/assets/js/132.c7fede4d.js"><link rel="prefetch" href="/assets/js/133.bb8dce13.js"><link rel="prefetch" href="/assets/js/134.8f7cc95b.js"><link rel="prefetch" href="/assets/js/135.0a2a419a.js"><link rel="prefetch" href="/assets/js/136.651e8437.js"><link rel="prefetch" href="/assets/js/137.05b30b57.js"><link rel="prefetch" href="/assets/js/138.b2c3e303.js"><link rel="prefetch" href="/assets/js/139.76fd8c0f.js"><link rel="prefetch" href="/assets/js/14.cfc9b2ac.js"><link rel="prefetch" href="/assets/js/140.2961bdbb.js"><link rel="prefetch" href="/assets/js/141.bbaaaf63.js"><link rel="prefetch" href="/assets/js/142.feaf09d5.js"><link rel="prefetch" href="/assets/js/143.71feb0a0.js"><link rel="prefetch" href="/assets/js/144.c82ad729.js"><link rel="prefetch" href="/assets/js/145.657a3e8a.js"><link rel="prefetch" href="/assets/js/146.a1e0be0b.js"><link rel="prefetch" href="/assets/js/147.114dd329.js"><link rel="prefetch" href="/assets/js/148.0996b308.js"><link rel="prefetch" href="/assets/js/149.93be0851.js"><link rel="prefetch" href="/assets/js/15.5b33b8b7.js"><link rel="prefetch" href="/assets/js/150.56bdec12.js"><link rel="prefetch" href="/assets/js/151.500285c5.js"><link rel="prefetch" href="/assets/js/152.2766d52c.js"><link rel="prefetch" href="/assets/js/153.840bfc31.js"><link rel="prefetch" href="/assets/js/154.59724fdd.js"><link rel="prefetch" href="/assets/js/155.74d8aa3c.js"><link rel="prefetch" href="/assets/js/156.7b03ccc1.js"><link rel="prefetch" href="/assets/js/157.64d5683e.js"><link rel="prefetch" href="/assets/js/158.05912f1f.js"><link rel="prefetch" href="/assets/js/159.593e99c4.js"><link rel="prefetch" href="/assets/js/16.4f2c0919.js"><link rel="prefetch" href="/assets/js/160.9ff3b679.js"><link rel="prefetch" href="/assets/js/161.b7ec4cc3.js"><link rel="prefetch" href="/assets/js/162.1d1b27c6.js"><link rel="prefetch" href="/assets/js/163.9f457a61.js"><link rel="prefetch" href="/assets/js/164.a360fae6.js"><link rel="prefetch" href="/assets/js/165.c338528d.js"><link rel="prefetch" href="/assets/js/166.1c2a29de.js"><link rel="prefetch" href="/assets/js/167.d5b557a9.js"><link rel="prefetch" href="/assets/js/168.9ecf5ad5.js"><link rel="prefetch" href="/assets/js/169.af6e0899.js"><link rel="prefetch" href="/assets/js/17.3c07648f.js"><link rel="prefetch" href="/assets/js/170.4b4cb261.js"><link rel="prefetch" href="/assets/js/18.70c44d5d.js"><link rel="prefetch" href="/assets/js/19.1b67b426.js"><link rel="prefetch" href="/assets/js/20.66fd5518.js"><link rel="prefetch" href="/assets/js/21.c0573e06.js"><link rel="prefetch" href="/assets/js/22.7db24912.js"><link rel="prefetch" href="/assets/js/23.afbdd7ed.js"><link rel="prefetch" href="/assets/js/24.33bbfd9f.js"><link rel="prefetch" href="/assets/js/25.eaa2343a.js"><link rel="prefetch" href="/assets/js/26.407edf5a.js"><link rel="prefetch" href="/assets/js/27.24515bbd.js"><link rel="prefetch" href="/assets/js/28.9e1846d3.js"><link rel="prefetch" href="/assets/js/29.aad66b79.js"><link rel="prefetch" href="/assets/js/3.6353ca7f.js"><link rel="prefetch" href="/assets/js/30.93bfddb4.js"><link rel="prefetch" href="/assets/js/31.40fa54d3.js"><link rel="prefetch" href="/assets/js/32.6465ed7b.js"><link rel="prefetch" href="/assets/js/33.a4912ad7.js"><link rel="prefetch" href="/assets/js/34.e5d32753.js"><link rel="prefetch" href="/assets/js/35.8b8120f2.js"><link rel="prefetch" href="/assets/js/36.43cb565f.js"><link rel="prefetch" href="/assets/js/37.301de0eb.js"><link rel="prefetch" href="/assets/js/38.d8696448.js"><link rel="prefetch" href="/assets/js/39.91e72e6f.js"><link rel="prefetch" href="/assets/js/40.99898b82.js"><link rel="prefetch" href="/assets/js/41.f03199a2.js"><link rel="prefetch" href="/assets/js/42.68111d6f.js"><link rel="prefetch" href="/assets/js/43.3210b574.js"><link rel="prefetch" href="/assets/js/44.6603dc8f.js"><link rel="prefetch" href="/assets/js/45.a27860fc.js"><link rel="prefetch" href="/assets/js/46.105a0f9d.js"><link rel="prefetch" href="/assets/js/47.d07c47bd.js"><link rel="prefetch" href="/assets/js/48.d0475ef1.js"><link rel="prefetch" href="/assets/js/49.f76efc30.js"><link rel="prefetch" href="/assets/js/5.aaeffccb.js"><link rel="prefetch" href="/assets/js/50.9819dcd6.js"><link rel="prefetch" href="/assets/js/51.c56f237c.js"><link rel="prefetch" href="/assets/js/52.0367bab7.js"><link rel="prefetch" href="/assets/js/53.905f2ea1.js"><link rel="prefetch" href="/assets/js/54.db39a810.js"><link rel="prefetch" href="/assets/js/55.daccbc53.js"><link rel="prefetch" href="/assets/js/56.40fe34da.js"><link rel="prefetch" href="/assets/js/57.2c2f226e.js"><link rel="prefetch" href="/assets/js/58.8d806ab1.js"><link rel="prefetch" href="/assets/js/59.2d914e3d.js"><link rel="prefetch" href="/assets/js/6.cf6e068f.js"><link rel="prefetch" href="/assets/js/60.2425dae7.js"><link rel="prefetch" href="/assets/js/61.4dcf5290.js"><link rel="prefetch" href="/assets/js/62.4e7877e0.js"><link rel="prefetch" href="/assets/js/63.76358851.js"><link rel="prefetch" href="/assets/js/65.41ffdc8d.js"><link rel="prefetch" href="/assets/js/66.2a918592.js"><link rel="prefetch" href="/assets/js/67.45e2fab1.js"><link rel="prefetch" href="/assets/js/68.41fb85b4.js"><link rel="prefetch" href="/assets/js/69.1dbb2dec.js"><link rel="prefetch" href="/assets/js/7.820eda1f.js"><link rel="prefetch" href="/assets/js/70.cae84dee.js"><link rel="prefetch" href="/assets/js/71.e81968e5.js"><link rel="prefetch" href="/assets/js/72.e5656deb.js"><link rel="prefetch" href="/assets/js/73.8f9076c4.js"><link rel="prefetch" href="/assets/js/74.83e169cb.js"><link rel="prefetch" href="/assets/js/75.b8eaa752.js"><link rel="prefetch" href="/assets/js/76.8afd8ce3.js"><link rel="prefetch" href="/assets/js/77.51be50f0.js"><link rel="prefetch" href="/assets/js/78.f9f0ee73.js"><link rel="prefetch" href="/assets/js/79.586abcdf.js"><link rel="prefetch" href="/assets/js/8.7fb1e45c.js"><link rel="prefetch" href="/assets/js/80.0970dbc7.js"><link rel="prefetch" href="/assets/js/81.5a56c405.js"><link rel="prefetch" href="/assets/js/82.5f4c5bc9.js"><link rel="prefetch" href="/assets/js/83.47164c04.js"><link rel="prefetch" href="/assets/js/84.649705f3.js"><link rel="prefetch" href="/assets/js/85.edce069f.js"><link rel="prefetch" href="/assets/js/86.d8bdcba5.js"><link rel="prefetch" href="/assets/js/87.ed0a3899.js"><link rel="prefetch" href="/assets/js/88.e3b20888.js"><link rel="prefetch" href="/assets/js/89.0cb87dfe.js"><link rel="prefetch" href="/assets/js/9.a3aae146.js"><link rel="prefetch" href="/assets/js/90.7f3d41f2.js"><link rel="prefetch" href="/assets/js/91.f7a00d45.js"><link rel="prefetch" href="/assets/js/92.24fbb839.js"><link rel="prefetch" href="/assets/js/93.c2cef63e.js"><link rel="prefetch" href="/assets/js/94.1ee7dc3c.js"><link rel="prefetch" href="/assets/js/95.95baa77e.js"><link rel="prefetch" href="/assets/js/96.eebe7477.js"><link rel="prefetch" href="/assets/js/97.2939ca98.js"><link rel="prefetch" href="/assets/js/98.6c9182e7.js"><link rel="prefetch" href="/assets/js/99.9291a3c1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f1c93842.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container have-rightmenu" data-v-f848d4e8><div class="global-loading-wrapper" data-v-137da995 data-v-f848d4e8 data-v-f848d4e8><div class="loader-main" data-v-137da995><img src="/assets/img/loading.18d75e19.gif" alt="loading" data-v-137da995></div></div> <div class="hide" data-v-f848d4e8><header class="navbar" data-v-f848d4e8><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="wudeh的学习基地" class="logo"> <span class="site-name">wudeh的学习基地</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">选择模式</h4> <ul class="color-mode-options"><li class="dark">深色模式</li><li class="light active">浅色模式</li><li class="read">阅读模式</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <ul class="suggestions" style="display:none;"></ul></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i></i>前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>文档教程</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/docs/imooc/wiki/" class="nav-link"><i class="iconfont reco-blog"></i>慕课教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/es6/" class="nav-link"><i class="iconfont reco-blog"></i>ES6 入门教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/wangdoc/javascript/" class="nav-link"><i class="iconfont reco-blog"></i>网道-JavaScript 教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/angular/" class="nav-link"><i class="iconfont reco-blog"></i>Angular 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/react/" class="nav-link"><i class="iconfont reco-blog"></i>React 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/vue/" class="nav-link"><i class="iconfont reco-blog"></i>Vue 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/node/" class="nav-link"><i class="iconfont reco-blog"></i>Node 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/babel/" class="nav-link"><i class="iconfont reco-blog"></i>Babel 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/webpack/" class="nav-link"><i class="iconfont reco-blog"></i>Webpack 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/typescript/" class="nav-link"><i class="iconfont reco-blog"></i>TypeScript 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/runoob/" class="nav-link"><i class="iconfont reco-blog"></i>菜鸟教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/docschina/" class="nav-link"><i class="iconfont reco-blog"></i>印记中文
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-api"></i>索引
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link"><i class="iconfont reco-category"></i>分类
+</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link"><i class="iconfont reco-tag"></i>标签
+</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link"><i class="iconfont reco-date"></i>归档
+</a></li></ul></div></div><div class="nav-item"><a href="/bookshop/message-board/" class="nav-link"><i class="iconfont reco-suggestion"></i>留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>联系</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/wudeh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/bookshop/linkme/" class="nav-link"><i class="iconfont reco-account"></i>关于我
+</a></li></ul></li><li class="dropdown-item"><h4>博客</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/wudeh/wudeh.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-document"></i>本站源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://wudeh.github.io/old-blog" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-document"></i>老版博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>其他</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bookshop/friendslink/" class="nav-link"><i class="iconfont reco-friend"></i>友情链接
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-f848d4e8></div> <aside class="sidebar" data-v-f848d4e8><div class="personal-info-wrapper" data-v-1bd7f9dd data-v-f848d4e8><img src="/img/logo.png" alt="author-avatar" class="personal-img" data-v-1bd7f9dd> <div class="author" data-v-1bd7f9dd>
+    wudeh
+  </div> <div class="personal-info-details" data-v-1bd7f9dd><div data-v-1bd7f9dd>
+      文章：<span data-v-1bd7f9dd>157</span></div> <div data-v-1bd7f9dd>地点：<span data-v-1bd7f9dd>北京·XX</span></div></div> <div class="slogan" data-v-1bd7f9dd>
+    just do it
+  </div> <ul class="social-links" data-v-1bd7f9dd><li class="social-item" data-v-1bd7f9dd><i class="iconfont reco-github" style="color:#3eaf7c;" data-v-1bd7f9dd></i></li><li class="social-item" data-v-1bd7f9dd><i class="iconfont reco-juejin" style="color:#00a1d6;" data-v-1bd7f9dd></i></li></ul></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i></i>前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>文档教程</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/docs/imooc/wiki/" class="nav-link"><i class="iconfont reco-blog"></i>慕课教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/es6/" class="nav-link"><i class="iconfont reco-blog"></i>ES6 入门教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/wangdoc/javascript/" class="nav-link"><i class="iconfont reco-blog"></i>网道-JavaScript 教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/angular/" class="nav-link"><i class="iconfont reco-blog"></i>Angular 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/react/" class="nav-link"><i class="iconfont reco-blog"></i>React 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/vue/" class="nav-link"><i class="iconfont reco-blog"></i>Vue 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/node/" class="nav-link"><i class="iconfont reco-blog"></i>Node 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/babel/" class="nav-link"><i class="iconfont reco-blog"></i>Babel 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/webpack/" class="nav-link"><i class="iconfont reco-blog"></i>Webpack 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/typescript/" class="nav-link"><i class="iconfont reco-blog"></i>TypeScript 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/runoob/" class="nav-link"><i class="iconfont reco-blog"></i>菜鸟教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/docschina/" class="nav-link"><i class="iconfont reco-blog"></i>印记中文
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-api"></i>索引
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link"><i class="iconfont reco-category"></i>分类
+</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link"><i class="iconfont reco-tag"></i>标签
+</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link"><i class="iconfont reco-date"></i>归档
+</a></li></ul></div></div><div class="nav-item"><a href="/bookshop/message-board/" class="nav-link"><i class="iconfont reco-suggestion"></i>留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>联系</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/wudeh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/bookshop/linkme/" class="nav-link"><i class="iconfont reco-account"></i>关于我
+</a></li></ul></li><li class="dropdown-item"><h4>博客</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/wudeh/wudeh.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-document"></i>本站源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://wudeh.github.io/old-blog" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-document"></i>老版博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>其他</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bookshop/friendslink/" class="nav-link"><i class="iconfont reco-friend"></i>友情链接
+</a></li></ul></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><a href="/pages/4e3130c16c521/" class="sidebar-link">【JavaScript】- 类和继承</a></li><li><a href="/pages/3d292acfbd9ca/" class="sidebar-link">【JavaScript】- 设计模式</a></li><li><a href="/pages/263b22ebdc394/" class="sidebar-link">【TypeScript】- 基础部分</a></li><li><a href="/pages/947c7b9b9db79/" class="sidebar-link">【TypeScript】- Utility Type</a></li><li><a href="/pages/b6d8dd375463c/" class="sidebar-link">实现懒加载的四种方式</a></li><li><a href="/pages/73a0a674682e8/" class="sidebar-link">冒泡和捕获</a></li><li><a href="/pages/dc024693bd189/" class="sidebar-link">前端 判断 数据类型</a></li><li><a href="/pages/08ba2be5142fe/" class="sidebar-link">前端 img标签显示 base64格式的 图片总结</a></li><li><a href="/pages/434457264620a/" class="sidebar-link">null和undefined</a></li><li><a href="/pages/283170f5aae0d/" class="sidebar-link">setTimeout 模拟 setInterval</a></li><li><a href="/pages/4bfeb3b5252/" class="sidebar-link">defer和async</a></li><li><a href="/pages/57d57b7618e19/" class="sidebar-link">手写原生 ajax</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-11"><div class="articleInfo-wrap" data-v-13f19dad><div class="articleInfo" data-v-13f19dad><ul class="breadcrumbs" data-v-13f19dad><li data-v-13f19dad><a href="/" title="首页" class="fa fa-laptop-house router-link-active" data-v-13f19dad></a></li> <li data-v-13f19dad><a href="/categories/?category=JavaScript" title="分类" data-v-13f19dad>JavaScript</a></li> <!----> <!----></ul> <div class="info" data-v-13f19dad><div title="作者" class="author fa fa-user" data-v-13f19dad><a href="javascript:;" data-v-13f19dad>wudeh</a></div> <div title="创建时间" class="date fa fa-calendar-alt" data-v-13f19dad><a href="javascript:;" data-v-13f19dad>2021/08/09 00:00:00</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">
+            Typescript 基础知识总结
+          </h1> <div class="theme-vdoing-content content__default"><h2 id="_1-原始数据类型"><a href="#_1-原始数据类型" class="header-anchor">#</a> 1.原始数据类型</h2> <h3 id="_1-number"><a href="#_1-number" class="header-anchor">#</a> 1.number</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>const count: number = 18; // 显示注解一个number类型
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_2-string"><a href="#_2-string" class="header-anchor">#</a> 2. string</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>const str: string = &quot;小明&quot;;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_3-boolean"><a href="#_3-boolean" class="header-anchor">#</a> 3. boolean</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>const status: string = false;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_4-null"><a href="#_4-null" class="header-anchor">#</a> 4. null</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>const value: null = null;
+
+const value: null = undefined; // 这一点null类型可以赋值undefined跟在 js中是一样的，null == undefined
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="_5-undefined"><a href="#_5-undefined" class="header-anchor">#</a> 5. undefined</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>const value: undefined = undefined;
+
+const value: undefined = null; // 这一点null类型可以赋值undefined跟在 js中是一样的，null == undefined
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="_6-void"><a href="#_6-void" class="header-anchor">#</a> 6. void</h3> <ul><li><code>JavaScript</code>中<code>void</code>关键字的意思就是无效的，比如<code>&lt;a href=&quot;javascript: void(0)&quot;&gt;</code>这是控制a标签的跳转默认行为</li> <li><code>TypeScript</code>中<code>void</code>类型代表无效的，一般只用在函数上，告诉别人这个函数没有返回值。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>function fn(): void {} // 正确
+
+function testFn(): void {
+    return 1; // 报错，不接受返回值存在
+}
+
+function fn1(): void { return undefined} // 显示返回undefined类型，也是可以的
+
+function fn2(): void { return null} // 显示返回null类型也可以，因为 null == undefined
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="_7-never"><a href="#_7-never" class="header-anchor">#</a> 7. never</h3> <p><code>never</code>一个永远不会有值的类型或者也可以说一个永远也执行不完的类型，代表用于不会有值，<code>undefined</code>、<code>null</code>也算做是值。一般这个类型就不会用到。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const test: never = null; // 错误
+const test1: never = undefined // 错误
+
+function Person(): never { // 正确，因为死循环了，一直执行不完
+    while(true) {}
+}
+
+function Person(): never { // 正确，因为递归，永远没有出口
+    Person()
+}
+
+function Person(): never { // 正确 代码报错了，执行不下去
+    throw new Error()
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="_9-any和unknown"><a href="#_9-any和unknown" class="header-anchor">#</a> 9. any和unknown</h3> <ul><li><code>any</code>会跳过类型检查器对值的检查，任何值都可以赋值给<code>any</code>类型，<code>any</code>类型的值也可以赋值给任何类型</li> <li><code>unknown</code>，任何类型的值都可以赋值给它，但它只能赋值给<code>unknown</code>和<code>any</code></li></ul> <h2 id="对象静态类型"><a href="#对象静态类型" class="header-anchor">#</a> 对象静态类型</h2> <h3 id="object"><a href="#object" class="header-anchor">#</a> object &amp;&amp; {}</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>const list: object = {} // 空对象
+
+const list1: object = null; // null对象
+
+const list: object = [] // 数组对象
+
+const list: {} = {}
+list.name = 1 // 报错 不可更改里面的字段，但是可以读取
+list.toString()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="数组"><a href="#数组" class="header-anchor">#</a> 数组</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>const list: [] = []; // 定义一个数组类型
+
+const list1: number[] = [1,2] // 定义一个数组，里面值必须是number
+
+const list2: object[] = [null, {}, []] // 定义一个数组里面必须是对象类型的
+
+const list3: Array&lt;number&gt; = [1,2,3] // 泛型定义数组必须是number类型
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="类"><a href="#类" class="header-anchor">#</a> 类</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 类
+class ClassPerson = {
+    name: &quot;前端&quot;
+}
+
+const person: ClassPerson = new Person();
+person.xxx = 123; // 这行代码报错，因为当前类中不存在该xxx属性
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="函数"><a href="#函数" class="header-anchor">#</a> 函数</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 函数
+const fn: () =&gt; string = () =&gt; &quot;前端&quot; // 定义一个变量必须是函数类型的，返回值必须是string类型
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>// 接口定义函数类型
+interface SearchFunc{
+  (source: string, subString: string): boolean;
+}
+
+let mySearch: SearchFunc = function(source: string, subString: string) { // OK
+  let result = source.search(subString);
+  return result &gt;-1;
+};
+
+// 函数中的 this 声明，这个this类型声明必须放在参数的首位：
+interface Obj {
+    fn: (this: Obj, name: string) =&gt; void;
+}
+
+let obj: Obj = {
+    fn(name: string) {}
+}
+
+let rab: Obj ={
+    fn(name: string) {}
+}
+
+obj.fn(&quot;兔兔&quot;); // OK
+obj.fn.call(rab, &quot;兔兔&quot;); // OK
+obj.fn.call(window, &quot;兔兔&quot;); // Error: this 应该为 Obj 类型
+
+// 可选参数，可选参数后面不允许再出现必需参数
+function buildName(firstName: string, lastName?: string) {
+    if (lastName) {
+        return firstName + ' ' + lastName;
+    } else {
+        return firstName;
+    }
+}
+let tomcat = buildName('Tom', 'Cat');
+let tom = buildName('Tom');
+
+
+// 参数默认值
+function buildName(firstName: string, lastName: string = 'Cat') {
+    return firstName + ' ' + lastName;
+}
+let tomcat = buildName('Tom', 'Cat');
+let tom = buildName('Tom');
+
+// 剩余参数
+function push(array: any[], ...items: any[]) {
+    items.forEach(function(item) {
+        array.push(item);
+    });
+}
+
+let a = [];
+push(a, 1, 2, 3);
+
+// 重载
+function reverse(x: number): number;
+function reverse(x: string): string;
+function reverse(x: number | string): number | string | void {
+    if (typeof x === 'number') {
+        return Number(x.toString().split('').reverse().join(''));
+    } else if (typeof x === 'string') {
+        return x.split('').reverse().join('');
+    }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br></div></div><h2 id="内置对象"><a href="#内置对象" class="header-anchor">#</a> 内置对象</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>let s: String = new String('兔神');
+let n: Number = new Number(123);
+let b: Boolean = new Boolean(1);
+let e: Error = new Error('Error occurred');
+let d: Date = new Date();
+let r: RegExp = /[a-z]/;
+
+let body: HTMLElement = document.body;
+let allDiv: NodeList = document.querySelectorAll('div');
+document.addEventListener('click', function(e: MouseEvent) {
+  // Do something
+});
+
+// 类数组对象IArguments
+function sum() {
+    let args: IArguments = arguments;
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h2 id="元组tuple"><a href="#元组tuple" class="header-anchor">#</a> 元组Tuple</h2> <p>表示一个已知数组的数量和类型的数组，定义数组中每一个值的类型</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const arr: [string, number] = [&quot;前端&quot;, 1]
+
+const arr: [string, string] = [&quot;前端&quot;, 1] // 报错
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="枚举enum"><a href="#枚举enum" class="header-anchor">#</a> 枚举Enum</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>enum color {
+    RED,
+    BLUE = &quot;blue&quot;,
+    GREEN = &quot;green&quot;
+}
+
+// color[&quot;RED&quot;] 0
+// color[&quot;BLUE&quot;] blue
+
+// 报错
+enum color {
+    RED,
+    BLUE = &quot;blue&quot;,
+    GREEN
+}
+
+// good
+enum color {
+    RED,	   // 0
+    BLUE = 4,  // 4
+    GREEN      // 5
+}
+
+enum color {
+    RED,	   // 0
+    BLUE = 4,  // 4
+    GREEN      // 5
+}
+
+console.log(color[4]) // BLUE
+console.log(color[0]) // RED
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h2 id="接口interface"><a href="#接口interface" class="header-anchor">#</a> 接口Interface</h2> <p>定义对象类型，复用</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface Types {
+    name: string, 
+    age: number
+}
+
+const testObj: Types = { name: &quot;前端&quot;, age: 18 }
+
+const testObj1: Types = { name: &quot;wude&quot;, age: 18 }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="readonly修饰符-可选修饰符"><a href="#readonly修饰符-可选修饰符" class="header-anchor">#</a> readonly修饰符， ?可选修饰符</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface Types {
+    readonly name: string, // 只读，不可更改
+    readonly age: number,
+    sex?: string // 可选属性，可以不定义
+}
+
+const testObj: Types = { name: &quot;前端娱乐圈&quot;, age: 18}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="extends继承"><a href="#extends继承" class="header-anchor">#</a> extends继承</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface Types {
+    readonly name: string, 
+    readonly age: number,
+    sex?: string
+}
+
+interface ChildrenType extends Types { // 这ChildrenType接口就已经继承了父级Types接口
+    hobby: []
+}
+    
+const testObj: ChildrenType = { name: &quot;前端娱乐圈&quot;, age: 18， hobby: [&quot;code&quot;, &quot;羽毛球&quot;] }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="propname扩展"><a href="#propname扩展" class="header-anchor">#</a> propName扩展</h3> <p>写入不在interface里面的属性。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface Types {
+    readonly name: string, 
+    readonly age: number,
+    sex?: string,
+    [propName: string]: any // propName字段必须是 string类型 or number类型。 值是any类型，也就是任意的
+}
+
+const testObj: Types = { name: &quot;前端&quot;, age: 19, hobby: [] } 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="接口中的-new"><a href="#接口中的-new" class="header-anchor">#</a> 接口中的 new</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface ClockConstructor {
+  new (hour: number, minute: number): any;
+}
+
+let C:ClockConstructor = class { // OK
+    constructor() {}
+}
+
+let C1:ClockConstructor = class { // OK
+    constructor(h: number) {}
+}
+ 
+let C2:ClockConstructor = class { // OK
+    constructor(h: number, m: number) {}
+}
+
+let C3:ClockConstructor = class { // Error
+    constructor(h: string, m: number) {}
+}
+
+let C4:ClockConstructor = class { // Error
+    constructor(h: number, m: number, b: number) {}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>参数少的，兼容参数多的</p> <blockquote><p>Ts在函数参数的比较中实际上默认采取的策略是双向协变：只有当源函数参数能够赋值给目标函数或者反过来时才能赋值成功。</p></blockquote> <h2 id="type"><a href="#type" class="header-anchor">#</a> Type</h2> <p>类型别名就是给一种类型起个别的名字，之后只要使用这个类型的地方，都可以用这个名字作为类型代替。它只是起了一个名字，并不是创建了一个新类型。别名类型只能定义是：基础静态类型、对象静态类型、元组、联合类型。不可以定义interface</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>type Types = string;
+
+type TypeUnite = string | number
+
+const name: typeUnite = &quot;前端娱乐圈&quot;
+const age: typeUnite = 18
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>和 <code>interface</code> 的区别</p> <ul><li><code>Types</code>类型别名<code>type</code>不允许出现重复名字</li> <li><code>interface</code>接口可以出现重复类型名称，如果重复出现则是，合并起来；但是如果属性同名称，类型不一样会报错</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>type Types = number
+type Types = string // 报错， 类型别名type不允许出现重复名字
+
+interface Types1 {
+    name: string
+}
+
+interface Types1 {
+    age: number
+}
+
+// interface接口可以出现重复类型名称，如果重复出现则是，合并起来也就是变成 { name：string, age: number }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><ul><li><p>类型别名不能被<code>extends</code>和<code>implements</code>，且不能出现在声明右侧的任何地方。</p></li> <li><p><code>type</code>实现继承，则可以使用交叉类型<code>type A = B &amp; C &amp; D</code>。</p></li> <li><p>type支持表达式 interface不支持</p></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>const count: number = 123
+type testType = typeof count
+
+const count: number = 123
+
+interface testType {
+    [name: typeof count]: any // 报错
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>type 支持类型映射，interface不支持</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>type keys = &quot;name&quot; | &quot;age&quot;  
+type KeysObj = {
+    [propName in keys]: string
+}
+
+const PersonObj: KeysObj = { // 正常运行
+    name: &quot;wud&quot;,
+    age: &quot;18&quot;
+} 
+
+interface testType {
+    [propName in keys]: string // 报错
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="联合类型"><a href="#联合类型" class="header-anchor">#</a> 联合类型</h2> <p>联合类型用<code>|</code>表示，说白了就是满足其中的一个类型就可以。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const statusTest: string | number = &quot;前端娱乐圈&quot;
+
+const flag: boolean | number = true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>但是用函数参数使用联合类型在以下情况会报错</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function testStatusFn(params: number | string) {
+    console.log(params.toFixed()) // 报错
+}
+
+testStatusFn(1)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="typeof-in-as"><a href="#typeof-in-as" class="header-anchor">#</a> typeof，in，as</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 正常
+function testStatusFn(params: string | number) {
+    if (typeof params == &quot;string&quot;) {
+        console.log(params.split)
+    }
+
+    if (typeof params == &quot;number&quot;) {
+        console.log(params.toFixed)
+    }
+}
+
+testStatusFn(1)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>interface frontEnd {
+    name: string
+}
+
+interface backEnd {
+    age: string
+}
+
+// 正常
+function testStatusFn(params: frontEnd | backEnd) {
+    if (&quot;name&quot; in params) {
+        console.log(params.name)
+    }
+
+    if (&quot;age&quot; in params) {
+        console.log(params.age)
+    }
+}
+testStatusFn({name: &quot;wude&quot;})
+
+// 正常
+function testStatusFn(params: frontEnd | backEnd) {
+    if (&quot;name&quot; in params) {
+        const res = (params as frontEnd).name
+        console.log(res)
+    }
+    
+    
+    if (&quot;age&quot; in params) {
+        const res = (params as backEnd).age
+        console.log(res)
+    }
+}
+
+testStatusFn({age: 118})
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h2 id="交叉类型"><a href="#交叉类型" class="header-anchor">#</a> 交叉类型</h2> <p>交叉类型是将多个类型合并为一个类型。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface A {
+  name: string,
+  age: number
+}
+interface B {
+  name: string,
+  gender: string
+}
+
+let a: A &amp; B = { // OK
+    name: &quot;兔兔&quot;,
+    age: 18,
+    gender: &quot;男&quot;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>注意点：交叉类型取的多个类型的并集，但是如果key相同但是类型不同，则该key为never类型。</p> <h2 id="泛型"><a href="#泛型" class="header-anchor">#</a> 泛型</h2> <p>泛型是专门针对不确定的类型使用，并且灵活。泛型的使用大部分都是使用<code>&lt;T&gt;</code>，当然也可以随便使用，如：<code>&lt;Test&gt;</code>、<code>&lt;Custom&gt;</code>都可以。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function test&lt;T&gt;(a: T, b: T) {
+    console.log(a, b)
+}
+test&lt;number&gt;(1, &quot;前端&quot;) // 调用后面跟着尖括号这就是泛型的类型，这时报错，因为在调用的使用类型是number，所以只能传入相同类型的
+
+test&lt;boolean&gt;(true, false) 
+
+test&lt;string&gt;(&quot;前端&quot;, &quot;wude&quot;)
+
+test&lt;any&gt;(1, &quot;前端&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="使用extends进行类型约束"><a href="#使用extends进行类型约束" class="header-anchor">#</a> 使用<code>extends</code>进行类型约束</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>function test&lt;T extends number | string, Y extends number | string&gt;(a: T, b: Y) {
+    console.log(a, b)
+}
+
+test&lt;number, string&gt;(18, &quot;前端&quot;)
+
+test&lt;string, number&gt;(&quot;前端&quot;, 18)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="泛型接口"><a href="#泛型接口" class="header-anchor">#</a> 泛型接口</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface GenericIdentityFn {
+    &lt;T&gt;(arg: T): T;
+}
+function identity&lt;T&gt;(arg: T): T {
+    return arg;
+}
+let myIdentity: GenericIdentityFn = identity;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>可以把泛型参数提前到接口名上</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface Person&lt;T&gt; {
+    name: T;
+    getAge(arg: T): T;
+}
+
+let myIdentity: Person&lt;string&gt; = {
+    name: &quot;兔兔&quot;,
+    getAge(name) {
+        return name
+    }
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="泛型类"><a href="#泛型类" class="header-anchor">#</a> 泛型类</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>class GenericNumber&lt;T&gt; {
+    zeroValue: T;
+    add: (x: T, y: T) =&gt; T;
+}
+
+let myGenericNumber = new GenericNumber&lt;number&gt;();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>类的静态属性不能使用泛型类型</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class GenericNumber&lt;T&gt; {
+    name: T;
+    static zeroValue: T; // Error
+    add: (x: T, y: T) =&gt; T;
+    constructor(name: T) {
+        this.name = name;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="泛型参数的默认类型"><a href="#泛型参数的默认类型" class="header-anchor">#</a> 泛型参数的默认类型</h3> <p>当使用泛型时没有在代码中直接指定类型参数，从实际值参数中也无法推测出时，这个默认类型就会起作用。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function createArray&lt;T = string&gt;(length: number, value: T): Array&lt;T&gt; {
+    let result: T[] = [];
+    for (let i = 0; i &lt; length; i++) {
+        result[i] = value;
+    }
+    return result;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="类-2"><a href="#类-2" class="header-anchor">#</a> 类</h2> <h3 id="public-private-protected"><a href="#public-private-protected" class="header-anchor">#</a> public private protected</h3> <ul><li><code>public</code>为类的公共属性，就是不管在类的内部还是外部，都可以访问该类中属性及方法。默认定义的属性及方法都是<code>public</code>。</li> <li><code>private</code>为类的私有属性，只有在当前类里面才能访问，当前类就是<code>{}</code>里面区域内。在<code>{}</code>外面是不能访问<code>private</code>定义的属性及方法的</li> <li><code>protected</code>为类的保护属性，只有在当前类和子类可以访问。也就是说用<code>protected</code>属性定义的子类也可以访问。</li></ul> <h3 id="implements"><a href="#implements" class="header-anchor">#</a> implements</h3> <p><code>implements</code>关键字只能在<code>class</code>中使用，实现一个新的类，从父级或者从接口实现所有的属性和方法，如果在<code>PersonAll</code>类里面不写进去接口里面已有的属性和方法则会报错</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface frontEnd {
+    name: string,
+    fn: () =&gt; void
+}
+
+class PersonAll implements frontEnd {
+    name: &quot;前端&quot;;
+    
+    fn() {
+        
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="抽象类"><a href="#抽象类" class="header-anchor">#</a> 抽象类</h3> <p>抽象类使用<code>abstract</code>关键字定义。<code>abstract</code>抽象方法不能实例化，如果，抽象类里面方法是抽象的，那么本身的类也必须是抽象的，抽象方法不能写函数体。父类里面有抽象方法，那么子类也必须要重写该方法。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 抽象类
+abstract class Boss {
+    name = &quot;秦&quot;;
+    call() {} // 抽象方法不能写函数体
+}
+
+class A extends Boss {
+    call() {
+        console.log(this.name);
+        console.log(&quot;A&quot;)
+    }
+}
+
+class B extends Boss {
+    call() {
+         console.log(&quot;B&quot;)
+    }
+}
+
+new A().call()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="工具泛型"><a href="#工具泛型" class="header-anchor">#</a> 工具泛型</h2> <p>两个关键字 keyof 和 in,</p> <ul><li>keyof 可以用来取得一个对象接口的所有 key 值</li> <li>而 in 则可以遍历枚举类型</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>interface Foo {
+  name: string;
+  age: number
+}
+type T = keyof Foo // -&gt; &quot;name&quot; | &quot;age&quot;
+
+type Keys = &quot;a&quot; | &quot;b&quot;
+type Obj =  {
+  [p in Keys]: any
+} // -&gt; { a: any, b: any }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="partial"><a href="#partial" class="header-anchor">#</a> Partial</h3> <p>将 T 中的所有的属性都变成可选的</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>实现：
+type Partial&lt;T&gt; = {
+  [P in keyof T]?: T[P];
+};
+
+案例：
+type Animal = {
+    name: string,
+    category: string,
+    age: number,
+    eat: () =&gt; number
+}
+type PartOfAnimal = Partial&lt;Animal&gt;;
+const ww: PartOfAnimal = {
+    eat: () =&gt; {
+        return 233
+    }
+}; // 属性全部可选后，可以只赋值部分属性了
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="pick"><a href="#pick" class="header-anchor">#</a> Pick</h3> <p>从 T 中将所有的 K 取出来，并生成一个新的类型</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type Pick&lt;T, K extends keyof T&gt; = {
+  [P in K]: T[P];
+};
+
+interface IFoo {
+    name: string
+    age: number
+    height: number
+}
+
+let a:Pick&lt;IFoo,'name'|'age'&gt; = {
+    name: '张三',
+    age: 23
+} // 正确。a包含属性name和age
+
+let b:Pick&lt;IFoo,'name'|'age'&gt; = {
+    name: '张三',
+    height: 163
+} // 报错。a只包含属性name和age，不包含属性height
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h3 id="record"><a href="#record" class="header-anchor">#</a> Record</h3> <p>生成一个属性为 K，属性值类型为 T 的类型</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type Record&lt;K extends keyof any, T&gt; = {
+    [P in K]: T;
+};
+
+案例：
+
+const obj: Record&lt;string, string&gt; = { 'name': '张三', 'tag': '打工人' } // 正确
+const obj1: Record&lt;'a', string&gt; = { 'a': '453' } // 正确
+const obj2: Record&lt;'a', string&gt; = { 'b': '453' } // 错误 obj2中没有属性a
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="required"><a href="#required" class="header-anchor">#</a> Required</h3> <p>和<code>Partial</code>相反，是将 T 中的所有属性都变成必选的状态。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type Required&lt;T&gt; = {
+  [P in keyof T]-?: T[P];
+};
+
+interface IFoo {
+    a?: number
+    b?: number
+}
+const a: Required&lt;IFoo&gt; = {
+    a: 2,
+    b: 3
+}
+
+interface IFoo1 {
+    a: number
+    b?: number
+}
+const b: Required&lt;IFoo1&gt; = {
+    a: 3,
+    b: 3
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h3 id="readonly"><a href="#readonly" class="header-anchor">#</a> Readonly</h3> <p>将一个类型的所有成员变为只读的状态。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type Readonly&lt;T&gt; = {
+  readonly [P in keyof T]: T[P];
+};
+
+案例
+interface IFoo {
+    name: string
+    age: number
+  }
+
+let a:Readonly&lt;IFoo&gt; = {
+    name: '张三',
+    age: 23
+}
+a.age = 24  // 报错，age是只读属性
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="exclude"><a href="#exclude" class="header-anchor">#</a> Exclude</h3> <p>从 T 中排除掉所有包含的 U 属性。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type Exclude&lt;T, U&gt; = T extends U ? never : T;
+
+案例
+// 相当于: type A = 'a'
+type A = Exclude&lt;'x' | 'a', 'x' | 'y' | 'z'&gt;
+let a: A = 'a' // 正确
+let b: A = 'x'  // 不能将类型“&quot;x&quot;”分配给类型“&quot;a&quot;”
+let c: A = 'l'  // 不能将类型“&quot;l&quot;”分配给类型“&quot;a&quot;”
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="extract"><a href="#extract" class="header-anchor">#</a> Extract</h3> <p>和上面的<code>Exclude</code>相反。而是从 T 中提取出所有包含的 U 属性值</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type Extract&lt;T, U&gt; = T extends U ? T : never;
+
+案例
+// 相当于: type A = 'x'
+type A = Extract&lt;'a' | 'x', 'x' | 'y'&gt;
+let a: A = 'x' // 正确
+let b: A = 'a'  // 报错：不能将类型“&quot;a&quot;”分配给类型“&quot;x&quot;”
+let c: A = 'y'  // 报错：不能将类型“&quot;y&quot;”分配给类型“&quot;x&quot;”
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="nonnullable"><a href="#nonnullable" class="header-anchor">#</a> NonNullable</h3> <p>去除 T 中包含的null或者undefined</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type NonNullable&lt;T&gt; = T extends null | undefined ? never : T;
+
+案例
+type A = NonNullable&lt;string | null | undefined&gt;
+let a: A = '李四' // 正确
+let b: A = 3  // 报错：不能将类型“number”分配给类型“string”
+let c: A = undefined  // 报错： 不能将类型“undefined”分配给类型“string”。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="parameters"><a href="#parameters" class="header-anchor">#</a> Parameters</h3> <p>用来获取一个函数的参数类型，而且返回的是只能包含一组类型的数组</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type Parameters&lt;T extends (...args: any[]) =&gt; any&gt; = T extends (...args: infer P) =&gt; any ? P : never;
+
+案例
+type Func = ({ user: string, age: number }) =&gt; void
+type Param = Parameters&lt;Func&gt;  // 等价与type Param = [{user: any;age: any;}]
+
+let a: Param = [{ user: '1', age: 34 }]  // 正确
+let b: Param = [{ user: '1', age: 34, height: 45 }] // 报错
+let c: Param = [{ user: '1', age: 34,},{ user: '1', age: 34,}] // 报错
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="constructorparameters"><a href="#constructorparameters" class="header-anchor">#</a> ConstructorParameters</h3> <p>获取一个类的构造函数参数类型，并以数组的形式返回</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>码实现：
+
+type ConstructorParameters&lt;T extends new (...args: any[]) =&gt; any&gt; = T extends new (...args: infer P) =&gt; any ? P : never;
+
+案例
+class Person {
+    constructor(name: string, age: number) {
+
+    }
+}
+let a: ConstructorParameters&lt;typeof Person&gt;  // 相当于 let a: [name: string, age: number]
+a = ['张三', 34]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="returntype"><a href="#returntype" class="header-anchor">#</a> ReturnType</h3> <p>用来得到一个函数的返回值类型。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type ReturnType&lt;T extends (...args: any[]) =&gt; any&gt; = T extends (...args: any[]) =&gt; infer R ? R : any;
+
+案例
+type Func = ({ user: string, age: number }) =&gt; string
+type Param = ReturnType&lt;Func&gt;   // 相当于： type Param = string
+let a:Param = undefined  // 报错  不能将类型“undefined”分配给类型“string”。
+let b:Param = '3'   // 正确
+let c:Param = null   // 报错  不能将类型“null”分配给类型“string”。
+let d:Param = 2    // 报错  不能将类型“number”分配给类型“string”。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="instancetype"><a href="#instancetype" class="header-anchor">#</a> InstanceType</h3> <p>获取一个类的实例类型，可以用获取到的实例类型来约束一个变量的赋值必须和类的成员类型完全一样才可以</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type InstanceType&lt;T extends new (...args: any[]) =&gt; any&gt; = T extends new (...args: any[]) =&gt; infer R ? R : any;
+
+案例
+class Person {
+    name: string
+    age: number
+    getName() {
+        return this.name
+    }
+}
+let a: InstanceType&lt;typeof Person&gt; = {
+    name: '李四',
+    age: 34,
+    getName() {
+        return ''
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h3 id="omit"><a href="#omit" class="header-anchor">#</a> Omit</h3> <p>用来忽略 T 中的 K 属性</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>源码实现：
+
+type Omit&lt;T, K&gt; = Pick&lt;T, Exclude&lt;keyof T, K&gt;&gt;
+
+案例
+type Person = {
+    name: string
+    age: number
+}
+let a: Omit&lt;Person, 'name'&gt; = { age: 34 }  // 正确
+let b: Omit&lt;Person, 'name'&gt; = { height: 34 }  // 报错，b只包含属性age
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></div></div> <div class="page-edit"><div class="tags"><a href="/tags/?tag=Typescript" title="标签">#Typescript</a></div> <div class="last-updated"><span class="prefix">最近更新时间：</span> <span class="time">2022/09/28 16:26:36</span></div></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="theme-vdoing-wrapper article-list bg-style-3"><div class="article-title"><a href="/archives/" class="fa fa-pencil-alt">
+      最近更新
+    </a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><div><a href="/pages/6765bc2eb6fce/"><div>04.SSE服务端推送</div></a></div> <div class="date"><span>2023/07/03 00:00:00</span></div></dt></dl><dl><dd>02</dd> <dt><div><a href="/pages/76a29f036f055/"><div>03.输入正则校验</div></a></div> <div class="date"><span>2023/04/22 00:00:00</span></div></dt></dl><dl><dd>03</dd> <dt><div><a href="/pages/cf28138670a/"><div>react fiber</div></a></div> <div class="date"><span>2023/02/16 00:00:00</span></div></dt></dl> <div class="more-box"><a href="/archives/" class="more"><i class="fas fa-angle-double-right"></i>前往更多 ...
+      </a></div></div></div> <div class="comments-wrapper" style="display:none;"><!----></div></main></div> <div class="footer-wrapper" data-v-47e9d8a4 data-v-47e9d8a4><span class="footer-reco-theme" data-v-47e9d8a4><i class="iconfont reco-github" data-v-47e9d8a4></i> <a target="blank" href="https://github.com/wudeh/wudeh.github.io" data-v-47e9d8a4>wudeh.github.io@5.0</a></span> <!----> <span class="footer-copyright" data-v-47e9d8a4><i class="iconfont reco-copyright" data-v-47e9d8a4></i> <a data-v-47e9d8a4><span data-v-47e9d8a4>wudeh</span> <span class="ml5" data-v-47e9d8a4> 2018 - 2023 </span></a></span> <span class="footer-view-site" data-v-47e9d8a4><i class="iconfont reco-eye" data-v-47e9d8a4></i> <span id="busuanzi_container_site_uv" data-v-47e9d8a4> 访客数：<span id="busuanzi_value_site_uv" class="num" data-v-47e9d8a4>-</span></span> <span id="busuanzi_container_site_pv" class="ml5" data-v-47e9d8a4> 访问量：<span id="busuanzi_value_site_pv" class="num" data-v-47e9d8a4>-</span></span></span> <!----></div> <!----></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><div></div></div></div>
+    <script src="/assets/js/app.c1963d6b.js" defer></script><script src="/assets/js/2.d5aa5fdd.js" defer></script><script src="/assets/js/64.4080e243.js" defer></script><script src="/assets/js/4.461c790c.js" defer></script>
+  </body>
+</html>

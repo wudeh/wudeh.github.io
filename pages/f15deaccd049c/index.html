@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vite 优化相关 | wudeh的学习基地</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="wudeh的学习基地是wudeh的个人博客，用于记录学习笔记、分享音乐、书籍、旅行等个人兴趣的站点。">
+    <meta name="keywords" content="wudeh,wudeh的博客,博客,个人博客,vue,vuejs,vuepress,vuepress-theme-reco">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.f1c93842.css" as="style"><link rel="preload" href="/assets/js/app.c1963d6b.js" as="script"><link rel="preload" href="/assets/js/2.d5aa5fdd.js" as="script"><link rel="preload" href="/assets/js/166.1c2a29de.js" as="script"><link rel="preload" href="/assets/js/4.461c790c.js" as="script"><link rel="prefetch" href="/assets/js/10.84c09092.js"><link rel="prefetch" href="/assets/js/100.7406247e.js"><link rel="prefetch" href="/assets/js/101.cd834df8.js"><link rel="prefetch" href="/assets/js/102.a67c2e7d.js"><link rel="prefetch" href="/assets/js/103.1cac045c.js"><link rel="prefetch" href="/assets/js/104.1e12fd65.js"><link rel="prefetch" href="/assets/js/105.5eb765dc.js"><link rel="prefetch" href="/assets/js/106.a80d047c.js"><link rel="prefetch" href="/assets/js/107.cfcc9fe0.js"><link rel="prefetch" href="/assets/js/108.3ddf3315.js"><link rel="prefetch" href="/assets/js/109.c58532df.js"><link rel="prefetch" href="/assets/js/11.5ce3516e.js"><link rel="prefetch" href="/assets/js/110.6d171eab.js"><link rel="prefetch" href="/assets/js/111.8bd77e5f.js"><link rel="prefetch" href="/assets/js/112.a0a1b030.js"><link rel="prefetch" href="/assets/js/113.be7313f6.js"><link rel="prefetch" href="/assets/js/114.e026f952.js"><link rel="prefetch" href="/assets/js/115.197e6281.js"><link rel="prefetch" href="/assets/js/116.0436c14d.js"><link rel="prefetch" href="/assets/js/117.68edcec6.js"><link rel="prefetch" href="/assets/js/118.075955c7.js"><link rel="prefetch" href="/assets/js/119.104eccbd.js"><link rel="prefetch" href="/assets/js/12.9456c572.js"><link rel="prefetch" href="/assets/js/120.414f9ede.js"><link rel="prefetch" href="/assets/js/121.cc12f5b8.js"><link rel="prefetch" href="/assets/js/122.9699503b.js"><link rel="prefetch" href="/assets/js/123.aabbe5e4.js"><link rel="prefetch" href="/assets/js/124.7a3e378f.js"><link rel="prefetch" href="/assets/js/125.4c351298.js"><link rel="prefetch" href="/assets/js/126.12939dcc.js"><link rel="prefetch" href="/assets/js/127.a8d56757.js"><link rel="prefetch" href="/assets/js/128.f1d6d500.js"><link rel="prefetch" href="/assets/js/129.4a246286.js"><link rel="prefetch" href="/assets/js/13.f1d46a02.js"><link rel="prefetch" href="/assets/js/130.c4fe855c.js"><link rel="prefetch" href="/assets/js/131.dfdb21ce.js"><link rel="prefetch" href="/assets/js/132.c7fede4d.js"><link rel="prefetch" href="/assets/js/133.bb8dce13.js"><link rel="prefetch" href="/assets/js/134.8f7cc95b.js"><link rel="prefetch" href="/assets/js/135.0a2a419a.js"><link rel="prefetch" href="/assets/js/136.651e8437.js"><link rel="prefetch" href="/assets/js/137.05b30b57.js"><link rel="prefetch" href="/assets/js/138.b2c3e303.js"><link rel="prefetch" href="/assets/js/139.76fd8c0f.js"><link rel="prefetch" href="/assets/js/14.cfc9b2ac.js"><link rel="prefetch" href="/assets/js/140.2961bdbb.js"><link rel="prefetch" href="/assets/js/141.bbaaaf63.js"><link rel="prefetch" href="/assets/js/142.feaf09d5.js"><link rel="prefetch" href="/assets/js/143.71feb0a0.js"><link rel="prefetch" href="/assets/js/144.c82ad729.js"><link rel="prefetch" href="/assets/js/145.657a3e8a.js"><link rel="prefetch" href="/assets/js/146.a1e0be0b.js"><link rel="prefetch" href="/assets/js/147.114dd329.js"><link rel="prefetch" href="/assets/js/148.0996b308.js"><link rel="prefetch" href="/assets/js/149.93be0851.js"><link rel="prefetch" href="/assets/js/15.5b33b8b7.js"><link rel="prefetch" href="/assets/js/150.56bdec12.js"><link rel="prefetch" href="/assets/js/151.500285c5.js"><link rel="prefetch" href="/assets/js/152.2766d52c.js"><link rel="prefetch" href="/assets/js/153.840bfc31.js"><link rel="prefetch" href="/assets/js/154.59724fdd.js"><link rel="prefetch" href="/assets/js/155.74d8aa3c.js"><link rel="prefetch" href="/assets/js/156.7b03ccc1.js"><link rel="prefetch" href="/assets/js/157.64d5683e.js"><link rel="prefetch" href="/assets/js/158.05912f1f.js"><link rel="prefetch" href="/assets/js/159.593e99c4.js"><link rel="prefetch" href="/assets/js/16.4f2c0919.js"><link rel="prefetch" href="/assets/js/160.9ff3b679.js"><link rel="prefetch" href="/assets/js/161.b7ec4cc3.js"><link rel="prefetch" href="/assets/js/162.1d1b27c6.js"><link rel="prefetch" href="/assets/js/163.9f457a61.js"><link rel="prefetch" href="/assets/js/164.a360fae6.js"><link rel="prefetch" href="/assets/js/165.c338528d.js"><link rel="prefetch" href="/assets/js/167.d5b557a9.js"><link rel="prefetch" href="/assets/js/168.9ecf5ad5.js"><link rel="prefetch" href="/assets/js/169.af6e0899.js"><link rel="prefetch" href="/assets/js/17.3c07648f.js"><link rel="prefetch" href="/assets/js/170.4b4cb261.js"><link rel="prefetch" href="/assets/js/18.70c44d5d.js"><link rel="prefetch" href="/assets/js/19.1b67b426.js"><link rel="prefetch" href="/assets/js/20.66fd5518.js"><link rel="prefetch" href="/assets/js/21.c0573e06.js"><link rel="prefetch" href="/assets/js/22.7db24912.js"><link rel="prefetch" href="/assets/js/23.afbdd7ed.js"><link rel="prefetch" href="/assets/js/24.33bbfd9f.js"><link rel="prefetch" href="/assets/js/25.eaa2343a.js"><link rel="prefetch" href="/assets/js/26.407edf5a.js"><link rel="prefetch" href="/assets/js/27.24515bbd.js"><link rel="prefetch" href="/assets/js/28.9e1846d3.js"><link rel="prefetch" href="/assets/js/29.aad66b79.js"><link rel="prefetch" href="/assets/js/3.6353ca7f.js"><link rel="prefetch" href="/assets/js/30.93bfddb4.js"><link rel="prefetch" href="/assets/js/31.40fa54d3.js"><link rel="prefetch" href="/assets/js/32.6465ed7b.js"><link rel="prefetch" href="/assets/js/33.a4912ad7.js"><link rel="prefetch" href="/assets/js/34.e5d32753.js"><link rel="prefetch" href="/assets/js/35.8b8120f2.js"><link rel="prefetch" href="/assets/js/36.43cb565f.js"><link rel="prefetch" href="/assets/js/37.301de0eb.js"><link rel="prefetch" href="/assets/js/38.d8696448.js"><link rel="prefetch" href="/assets/js/39.91e72e6f.js"><link rel="prefetch" href="/assets/js/40.99898b82.js"><link rel="prefetch" href="/assets/js/41.f03199a2.js"><link rel="prefetch" href="/assets/js/42.68111d6f.js"><link rel="prefetch" href="/assets/js/43.3210b574.js"><link rel="prefetch" href="/assets/js/44.6603dc8f.js"><link rel="prefetch" href="/assets/js/45.a27860fc.js"><link rel="prefetch" href="/assets/js/46.105a0f9d.js"><link rel="prefetch" href="/assets/js/47.d07c47bd.js"><link rel="prefetch" href="/assets/js/48.d0475ef1.js"><link rel="prefetch" href="/assets/js/49.f76efc30.js"><link rel="prefetch" href="/assets/js/5.aaeffccb.js"><link rel="prefetch" href="/assets/js/50.9819dcd6.js"><link rel="prefetch" href="/assets/js/51.c56f237c.js"><link rel="prefetch" href="/assets/js/52.0367bab7.js"><link rel="prefetch" href="/assets/js/53.905f2ea1.js"><link rel="prefetch" href="/assets/js/54.db39a810.js"><link rel="prefetch" href="/assets/js/55.daccbc53.js"><link rel="prefetch" href="/assets/js/56.40fe34da.js"><link rel="prefetch" href="/assets/js/57.2c2f226e.js"><link rel="prefetch" href="/assets/js/58.8d806ab1.js"><link rel="prefetch" href="/assets/js/59.2d914e3d.js"><link rel="prefetch" href="/assets/js/6.cf6e068f.js"><link rel="prefetch" href="/assets/js/60.2425dae7.js"><link rel="prefetch" href="/assets/js/61.4dcf5290.js"><link rel="prefetch" href="/assets/js/62.4e7877e0.js"><link rel="prefetch" href="/assets/js/63.76358851.js"><link rel="prefetch" href="/assets/js/64.4080e243.js"><link rel="prefetch" href="/assets/js/65.41ffdc8d.js"><link rel="prefetch" href="/assets/js/66.2a918592.js"><link rel="prefetch" href="/assets/js/67.45e2fab1.js"><link rel="prefetch" href="/assets/js/68.41fb85b4.js"><link rel="prefetch" href="/assets/js/69.1dbb2dec.js"><link rel="prefetch" href="/assets/js/7.820eda1f.js"><link rel="prefetch" href="/assets/js/70.cae84dee.js"><link rel="prefetch" href="/assets/js/71.e81968e5.js"><link rel="prefetch" href="/assets/js/72.e5656deb.js"><link rel="prefetch" href="/assets/js/73.8f9076c4.js"><link rel="prefetch" href="/assets/js/74.83e169cb.js"><link rel="prefetch" href="/assets/js/75.b8eaa752.js"><link rel="prefetch" href="/assets/js/76.8afd8ce3.js"><link rel="prefetch" href="/assets/js/77.51be50f0.js"><link rel="prefetch" href="/assets/js/78.f9f0ee73.js"><link rel="prefetch" href="/assets/js/79.586abcdf.js"><link rel="prefetch" href="/assets/js/8.7fb1e45c.js"><link rel="prefetch" href="/assets/js/80.0970dbc7.js"><link rel="prefetch" href="/assets/js/81.5a56c405.js"><link rel="prefetch" href="/assets/js/82.5f4c5bc9.js"><link rel="prefetch" href="/assets/js/83.47164c04.js"><link rel="prefetch" href="/assets/js/84.649705f3.js"><link rel="prefetch" href="/assets/js/85.edce069f.js"><link rel="prefetch" href="/assets/js/86.d8bdcba5.js"><link rel="prefetch" href="/assets/js/87.ed0a3899.js"><link rel="prefetch" href="/assets/js/88.e3b20888.js"><link rel="prefetch" href="/assets/js/89.0cb87dfe.js"><link rel="prefetch" href="/assets/js/9.a3aae146.js"><link rel="prefetch" href="/assets/js/90.7f3d41f2.js"><link rel="prefetch" href="/assets/js/91.f7a00d45.js"><link rel="prefetch" href="/assets/js/92.24fbb839.js"><link rel="prefetch" href="/assets/js/93.c2cef63e.js"><link rel="prefetch" href="/assets/js/94.1ee7dc3c.js"><link rel="prefetch" href="/assets/js/95.95baa77e.js"><link rel="prefetch" href="/assets/js/96.eebe7477.js"><link rel="prefetch" href="/assets/js/97.2939ca98.js"><link rel="prefetch" href="/assets/js/98.6c9182e7.js"><link rel="prefetch" href="/assets/js/99.9291a3c1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f1c93842.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container have-rightmenu" data-v-f848d4e8><div class="global-loading-wrapper" data-v-137da995 data-v-f848d4e8 data-v-f848d4e8><div class="loader-main" data-v-137da995><img src="/assets/img/loading.18d75e19.gif" alt="loading" data-v-137da995></div></div> <div class="hide" data-v-f848d4e8><header class="navbar" data-v-f848d4e8><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="wudeh的学习基地" class="logo"> <span class="site-name">wudeh的学习基地</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">选择模式</h4> <ul class="color-mode-options"><li class="dark">深色模式</li><li class="light active">浅色模式</li><li class="read">阅读模式</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <ul class="suggestions" style="display:none;"></ul></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i></i>前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>文档教程</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/docs/imooc/wiki/" class="nav-link"><i class="iconfont reco-blog"></i>慕课教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/es6/" class="nav-link"><i class="iconfont reco-blog"></i>ES6 入门教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/wangdoc/javascript/" class="nav-link"><i class="iconfont reco-blog"></i>网道-JavaScript 教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/angular/" class="nav-link"><i class="iconfont reco-blog"></i>Angular 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/react/" class="nav-link"><i class="iconfont reco-blog"></i>React 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/vue/" class="nav-link"><i class="iconfont reco-blog"></i>Vue 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/node/" class="nav-link"><i class="iconfont reco-blog"></i>Node 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/babel/" class="nav-link"><i class="iconfont reco-blog"></i>Babel 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/webpack/" class="nav-link"><i class="iconfont reco-blog"></i>Webpack 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/typescript/" class="nav-link"><i class="iconfont reco-blog"></i>TypeScript 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/runoob/" class="nav-link"><i class="iconfont reco-blog"></i>菜鸟教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/docschina/" class="nav-link"><i class="iconfont reco-blog"></i>印记中文
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-api"></i>索引
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link"><i class="iconfont reco-category"></i>分类
+</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link"><i class="iconfont reco-tag"></i>标签
+</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link"><i class="iconfont reco-date"></i>归档
+</a></li></ul></div></div><div class="nav-item"><a href="/bookshop/message-board/" class="nav-link"><i class="iconfont reco-suggestion"></i>留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>联系</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/wudeh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/bookshop/linkme/" class="nav-link"><i class="iconfont reco-account"></i>关于我
+</a></li></ul></li><li class="dropdown-item"><h4>博客</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/wudeh/wudeh.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-document"></i>本站源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://wudeh.github.io/old-blog" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-document"></i>老版博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>其他</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bookshop/friendslink/" class="nav-link"><i class="iconfont reco-friend"></i>友情链接
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-f848d4e8></div> <aside class="sidebar" data-v-f848d4e8><div class="personal-info-wrapper" data-v-1bd7f9dd data-v-f848d4e8><img src="/img/logo.png" alt="author-avatar" class="personal-img" data-v-1bd7f9dd> <div class="author" data-v-1bd7f9dd>
+    wudeh
+  </div> <div class="personal-info-details" data-v-1bd7f9dd><div data-v-1bd7f9dd>
+      文章：<span data-v-1bd7f9dd>157</span></div> <div data-v-1bd7f9dd>地点：<span data-v-1bd7f9dd>北京·XX</span></div></div> <div class="slogan" data-v-1bd7f9dd>
+    just do it
+  </div> <ul class="social-links" data-v-1bd7f9dd><li class="social-item" data-v-1bd7f9dd><i class="iconfont reco-github" style="color:#3eaf7c;" data-v-1bd7f9dd></i></li><li class="social-item" data-v-1bd7f9dd><i class="iconfont reco-juejin" style="color:#00a1d6;" data-v-1bd7f9dd></i></li></ul></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i></i>前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>文档教程</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/docs/imooc/wiki/" class="nav-link"><i class="iconfont reco-blog"></i>慕课教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/es6/" class="nav-link"><i class="iconfont reco-blog"></i>ES6 入门教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/wangdoc/javascript/" class="nav-link"><i class="iconfont reco-blog"></i>网道-JavaScript 教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/angular/" class="nav-link"><i class="iconfont reco-blog"></i>Angular 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/react/" class="nav-link"><i class="iconfont reco-blog"></i>React 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/vue/" class="nav-link"><i class="iconfont reco-blog"></i>Vue 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/node/" class="nav-link"><i class="iconfont reco-blog"></i>Node 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/babel/" class="nav-link"><i class="iconfont reco-blog"></i>Babel 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/webpack/" class="nav-link"><i class="iconfont reco-blog"></i>Webpack 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/typescript/" class="nav-link"><i class="iconfont reco-blog"></i>TypeScript 文档
+</a></li><li class="dropdown-subitem"><a href="/web/docs/runoob/" class="nav-link"><i class="iconfont reco-blog"></i>菜鸟教程
+</a></li><li class="dropdown-subitem"><a href="/web/docs/docschina/" class="nav-link"><i class="iconfont reco-blog"></i>印记中文
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-api"></i>索引
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link"><i class="iconfont reco-category"></i>分类
+</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link"><i class="iconfont reco-tag"></i>标签
+</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link"><i class="iconfont reco-date"></i>归档
+</a></li></ul></div></div><div class="nav-item"><a href="/bookshop/message-board/" class="nav-link"><i class="iconfont reco-suggestion"></i>留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>联系</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/wudeh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/bookshop/linkme/" class="nav-link"><i class="iconfont reco-account"></i>关于我
+</a></li></ul></li><li class="dropdown-item"><h4>博客</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/wudeh/wudeh.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-document"></i>本站源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://wudeh.github.io/old-blog" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-document"></i>老版博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>其他</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bookshop/friendslink/" class="nav-link"><i class="iconfont reco-friend"></i>友情链接
+</a></li></ul></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><a href="/pages/c9e6eb74a1978/" class="sidebar-link">webpack 知识点</a></li><li><a href="/pages/9ec14b4f64f3e/" class="sidebar-link">webpack5新特性</a></li><li><a href="/pages/f15deaccd049c/" aria-current="page" class="active sidebar-link">vite 优化相关</a></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-14"><div class="articleInfo-wrap" data-v-13f19dad><div class="articleInfo" data-v-13f19dad><ul class="breadcrumbs" data-v-13f19dad><li data-v-13f19dad><a href="/" title="首页" class="fa fa-laptop-house router-link-active" data-v-13f19dad></a></li> <li data-v-13f19dad><a href="/categories/?category=webpack" title="分类" data-v-13f19dad>webpack</a></li> <!----> <!----></ul> <div class="info" data-v-13f19dad><div title="作者" class="author fa fa-user" data-v-13f19dad><a href="javascript:;" data-v-13f19dad>wudeh</a></div> <div title="创建时间" class="date fa fa-calendar-alt" data-v-13f19dad><a href="javascript:;" data-v-13f19dad>2022/12/04 00:00:00</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">
+            vite 优化相关
+          </h1> <div class="theme-vdoing-content content__default"><p>总的来说和 webpack 优化思路相通
+更多社区插件：https://github.com/vitejs/awesome-vite#plugins</p> <h3 id="分析构建"><a href="#分析构建" class="header-anchor">#</a> 分析构建</h3> <p>安装 <code>rollup-plugin-visualizer</code> 插件，该插件用于分析依赖大小占比。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install  rollup-plugin-visualizer @types/rollup-plugin-visualizer -D
+///在vite.config.ts中引入并使用它。
+import { visualizer } from 'rollup-plugin-visualizer';
+
+export default defineConfig({
+  // ...
+  plugins: [
+    // 将这个visualizer插件放到最后的位置中
+    visualizer()
+  ]
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>复制代码
+配置完毕之后，下一次npm build项目时，会在目录下创建一个stats.html，里面即是项目中的分析结果。分析可以将空间占比比较大的文件进行适当的优化。</p> <h3 id="代码压缩"><a href="#代码压缩" class="header-anchor">#</a> 代码压缩</h3> <p>安装vite-plugin-compress插件，对项目中的代码进行gzip压缩或brotli压缩</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install vite-plugin-compress -s
+// 在vite.config.ts中引入并使用
+import compress from 'vite-plugin-compress'
+export default defineConfig({
+  // ...
+  plugins: [
+    compress(),
+  ]
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="图片压缩-会导致项目启动时间延长"><a href="#图片压缩-会导致项目启动时间延长" class="header-anchor">#</a> 图片压缩（会导致项目启动时间延长）</h3> <p>vite-plugin-imagemin</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm i vite-plugin-imagemin -D
+// 在vite.config.ts中引入并使用
+import viteImagemin from 'vite-plugin-imagemin'
+复制代码
+export default defineConfig({
+  // ...
+  plugins: [
+    viteImagemin({
+      gifsicle: {
+        optimizationLevel: 7,
+        interlaced: false
+      },
+      optipng: {
+        optimizationLevel: 7
+      },
+      mozjpeg: {
+        quality: 20
+      },
+      pngquant: {
+        quality: [0.8, 0.9],
+        speed: 4
+      },
+      svgo: {
+        plugins: [
+          {
+            name: 'removeViewBox'
+          },
+          {
+            name: 'removeEmptyAttrs',
+            active: false
+          }
+        ]
+      }
+    }),
+  ]
+});
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h3 id="lodash-优化"><a href="#lodash-优化" class="header-anchor">#</a> lodash 优化</h3> <p>将lodash替换成lodash-es,就可以一行引入方式</p> <p>export { cloneDeep, throttle, debounce } from 'lodash'</p> <p>lodash-es为ES modules版本的库，可以依赖tree-shake优化，只打包使用到的函数</p> <h3 id="兼容"><a href="#兼容" class="header-anchor">#</a> 兼容</h3> <p>部分旧版浏览器不支持ESM，需要使用@vitejs/plugin-legacy来兼容旧版的浏览器
+安装@vitejs/plugin-legacy</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install @vitejs/plugin-legacy -s
+// 在vite.config.ts中引入并使用它。
+import legacy from '@vitejs/plugin-legacy'
+复制代码
+export default defineConfig({
+  // ...
+  plugins: [
+    legacy({
+      targets: ['defaults', 'not IE 11']
+    })
+  ]
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="基础配置"><a href="#基础配置" class="header-anchor">#</a> 基础配置</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>// vite.config.js
+import { defineConfig } from 'vite' // 使用 defineConfig 工具函数获取类型提示：
+import vue from '@vitejs/plugin-vue'
+import { viteMockServe } from 'vite-plugin-mock'
+
+export default defineConfig({
+  base: '/foo/', // 开发或生产环境服务的公共基础路径
+  optimizeDeps: {
+    force: true // 强制进行依赖预构建
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import '/src/assets/styles/variables.scss';` // 引入全局变量文件
+      }
+    },
+    postcss: {
+      plugins: [
+        // viewport 布局适配
+        postcssPxToViewport({
+          viewportWidth: 375
+        })
+      ]
+    }
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src') // 路径别名
+    },
+    extensions: ['.js', '.ts', '.json'] // 导入时想要省略的扩展名列表
+  },
+  server: {
+    host: true, // 监听所有地址
+    proxy: {
+      // 字符串简写写法
+      '/foo': 'http://localhost:4567',
+      // 选项写法
+      '/api': {
+        target: 'http://jsonplaceholder.typicode.com',
+        changeOrigin: true,
+        rewrite: (path) =&gt; path.replace(/^\/api/, '')
+      },
+      // 正则表达式写法
+      '^/fallback/.*': {
+        target: 'http://jsonplaceholder.typicode.com',
+        changeOrigin: true,
+        rewrite: (path) =&gt; path.replace(/^\/fallback/, '')
+      },
+      // 使用 proxy 实例
+      '/api': {
+        target: 'http://jsonplaceholder.typicode.com',
+        changeOrigin: true,
+        configure: (proxy, options) =&gt; {
+          // proxy 是 'http-proxy' 的实例
+        }
+      },
+      // Proxying websockets or socket.io
+      '/socket.io': {
+        target: 'ws://localhost:3000',
+        ws: true
+      }
+    }
+  },
+  build: {
+    outDir: 'build', // 打包文件的输出目录
+    assetsDir: 'static', // 静态资源的存放目录
+    assetsInlineLimit: 4096 // 图片转 base64 编码的阈值
+  },
+  plugins: [
+    vue(),
+    viteMockServe()
+  ]
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br></div></div></div></div> <div class="page-edit"><div class="tags"><a href="/tags/?tag=vite" title="标签">#vite</a></div> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/9ec14b4f64f3e/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">webpack5新特性</div></a> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/9ec14b4f64f3e/" class="prev">webpack5新特性</a></span> <!----></p></div></div></div> <div class="theme-vdoing-wrapper article-list bg-style-8"><div class="article-title"><a href="/archives/" class="fa fa-pencil-alt">
+      最近更新
+    </a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><div><a href="/pages/6765bc2eb6fce/"><div>04.SSE服务端推送</div></a></div> <div class="date"><span>2023/07/03 00:00:00</span></div></dt></dl><dl><dd>02</dd> <dt><div><a href="/pages/76a29f036f055/"><div>03.输入正则校验</div></a></div> <div class="date"><span>2023/04/22 00:00:00</span></div></dt></dl><dl><dd>03</dd> <dt><div><a href="/pages/cf28138670a/"><div>react fiber</div></a></div> <div class="date"><span>2023/02/16 00:00:00</span></div></dt></dl> <div class="more-box"><a href="/archives/" class="more"><i class="fas fa-angle-double-right"></i>前往更多 ...
+      </a></div></div></div> <div class="comments-wrapper" style="display:none;"><!----></div></main></div> <div class="footer-wrapper" data-v-47e9d8a4 data-v-47e9d8a4><span class="footer-reco-theme" data-v-47e9d8a4><i class="iconfont reco-github" data-v-47e9d8a4></i> <a target="blank" href="https://github.com/wudeh/wudeh.github.io" data-v-47e9d8a4>wudeh.github.io@5.0</a></span> <!----> <span class="footer-copyright" data-v-47e9d8a4><i class="iconfont reco-copyright" data-v-47e9d8a4></i> <a data-v-47e9d8a4><span data-v-47e9d8a4>wudeh</span> <span class="ml5" data-v-47e9d8a4> 2018 - 2023 </span></a></span> <span class="footer-view-site" data-v-47e9d8a4><i class="iconfont reco-eye" data-v-47e9d8a4></i> <span id="busuanzi_container_site_uv" data-v-47e9d8a4> 访客数：<span id="busuanzi_value_site_uv" class="num" data-v-47e9d8a4>-</span></span> <span id="busuanzi_container_site_pv" class="ml5" data-v-47e9d8a4> 访问量：<span id="busuanzi_value_site_pv" class="num" data-v-47e9d8a4>-</span></span></span> <!----></div> <!----></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><div></div></div></div>
+    <script src="/assets/js/app.c1963d6b.js" defer></script><script src="/assets/js/2.d5aa5fdd.js" defer></script><script src="/assets/js/166.1c2a29de.js" defer></script><script src="/assets/js/4.461c790c.js" defer></script>
+  </body>
+</html>
