@@ -1,10 +1,10 @@
 <template>
   <div class="theme-container" :class="pageClasses">
     <transition name="fade">
-      <LoadingPage v-show="firstLoad"/>
+      <!-- <LoadingPage v-show="firstLoad"/> -->
     </transition>
 
-    <div :class="{ 'hide': firstLoad }">
+    <div>
       <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
 
       <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
@@ -48,7 +48,7 @@ export default defineComponent({
     const { root } = ctx
 
     const isSidebarOpen = ref(false)
-    const firstLoad = ref(false)
+    const firstLoad = ref(true)
 
     const shouldShowSidebar = computed(() => props.sidebarItems.length > 0)
 
