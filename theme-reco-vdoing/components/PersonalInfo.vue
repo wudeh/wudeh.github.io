@@ -1,23 +1,23 @@
 <template>
   <div class="personal-info-wrapper">
-    <img v-if="$themeConfig.authorAvatar" class="personal-img" :src="$withBase($themeConfig.authorAvatar)" alt="author-avatar" />
-    <div class="author" v-if="$themeConfig.author || $site.title">
-      {{ $themeConfig.author || $site.title }}
+    <img class="personal-img" src="https://p6-passport.byteacctimg.com/img/user-avatar/6b1f799ac6e240c8adda1bfa18aa0c61~90x90.awebp" alt="author-avatar" />
+    <div class="author" >
+      wudeh
     </div>
     <div class="personal-info-details">
       <div>
-        文章：<span>{{ pageNums }}</span>
+        文章：<span>infinite</span>
       </div>
-      <div>地点：<span>北京·XX</span></div>
+      <div>地点：<span>福建·莆田</span></div>
     </div>
-    <div class="slogan" v-if="$themeConfig.slogan">
+    <!-- <div class="slogan" v-if="$themeConfig.slogan">
       {{ $themeConfig.slogan }}
     </div>
     <ul class="social-links" v-if="socialLinks && socialLinks.length">
       <li class="social-item" v-for="(item, index) in socialLinks" :key="index">
         <reco-icon :icon="item.icon" :link="item.link" :style="{ color: item.color }" />
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -29,16 +29,7 @@ import { getOneColor } from "@theme/helpers/other";
 export default defineComponent({
   components: { RecoIcon },
   setup(props, ctx) {
-    const { root: _this } = ctx;
-    const homeBlogCfg = computed(() => _this.$recoLocales.homeBlog);
-    const socialLinks = computed(() =>
-      ((_this.$themeConfig.blogConfig && _this.$themeConfig.blogConfig.socialLinks) || []).map((item) => {
-        if (!item.color) item.color = getOneColor();
-        return item;
-      })
-    );
-    const pageNums = computed(() => _this.$sortPosts.length);
-    return { homeBlogCfg, socialLinks, pageNums };
+    
   },
 });
 </script>

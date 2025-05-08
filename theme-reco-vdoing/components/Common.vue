@@ -23,12 +23,11 @@
 import { defineComponent, computed, ref, onMounted } from '@vue/composition-api'
 import Navbar from '@theme/components/Navbar'
 import Sidebar from '@theme/components/Sidebar'
-import PersonalInfo from '@theme/components/PersonalInfo'
 import { setTimeout } from 'timers'
 import logsFunc from '@theme/lib/logs'
 
 export default defineComponent({
-  components: { Sidebar, Navbar, PersonalInfo },
+  components: { Sidebar, Navbar },
 
   props: {
     sidebar: {
@@ -49,11 +48,12 @@ export default defineComponent({
     const { root } = ctx
 
     const isSidebarOpen = ref(false)
-    const firstLoad = ref(true)
+    const firstLoad = ref(false)
 
     const shouldShowSidebar = computed(() => props.sidebarItems.length > 0)
 
     const shouldShowNavbar = computed(() => {
+      return true
       const { themeConfig } = root.$site
       const { frontmatter } = root.$page
 
@@ -71,6 +71,7 @@ export default defineComponent({
       )
     })
     const showRightMenu = computed(() => {
+      return true
       const { headers } = root.$page
       return (
         !root.$frontmatter.home
@@ -81,6 +82,14 @@ export default defineComponent({
       )
     })
     const pageClasses = computed(() => {
+      return {
+        ...{
+          'no-navbar': !shouldShowNavbar.value,
+          'sidebar-open': isSidebarOpen.value,
+          'no-sidebar': !shouldShowSidebar.value,
+          'have-rightmenu': showRightMenu.value,
+        },
+      }
       const userPageClass = root.$frontmatter.pageClass
       return {
         ...{
@@ -110,12 +119,12 @@ export default defineComponent({
       }, time)
     }
     // 日志输出
-    logsFunc(root.$site.themeConfig.version)
+    // logsFunc(root.$site.themeConfig.version)
 
-    onMounted(() => {
-      initRouterHandler()
-      handleLoading()
-    })
+    // onMounted(() => {
+    //   initRouterHandler()
+    //   handleLoading()
+    // })
 
     return { isSidebarOpen, shouldShowNavbar, shouldShowSidebar, pageClasses, toggleSidebar, firstLoad }
   }
