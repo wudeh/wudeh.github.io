@@ -1,8 +1,8 @@
-<p align="center">
+<!-- <p align="center">
   <img width="120" src="https://wudeh.github.io/img/logo.png">
-</p>
+</p> -->
 
-<p align="center">
+<!-- <p align="center">
   <a href="https://wudeh.github.io/">
     <img src="https://img.shields.io/badge/%E4%BF%8A%E5%8A%AB%E5%8D%9A%E5%AE%A2-5.0-blue" alt="blog">
   </a>
@@ -18,9 +18,9 @@
   <a href="https://github.com/xugaoyi/vuepress-theme-vdoing">
     <img src="https://img.shields.io/badge/vuepress--theme--vdoing-1.8.3-red" alt="vuepress-theme-vdoing">
   </a>
-</p>
+</p> -->
 
-## 关于我
+<!-- ## 关于我
 
 [关于我 - 图文介绍](https://wudeh.github.io/views/about/)
 
@@ -30,7 +30,7 @@
 
 ## blog 4.0
 
-请切换分支：[20210501_blog_4.0](https://github.com/wudeh/wudeh.github.io/tree/20210501_blog_4.0)。当前博客 5.0，2021.5.1 上线。
+请切换分支：[20210501_blog_4.0](https://github.com/wudeh/wudeh.github.io/tree/20210501_blog_4.0)。当前博客 5.0，2021.5.1 上线。 -->
 
 ## 资源分享(持续更新)
 
